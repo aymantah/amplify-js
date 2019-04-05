@@ -26,6 +26,8 @@ export default class CognitoUserPool {
    * @param {object} data Creation options.
    * @param {string} data.UserPoolId Cognito user pool id.
    * @param {string} data.ClientId User pool application client id.
+   * @param {string} data.endpoint Optional custom service endpoint.
+   * @param {object} data.fetchOptions Optional options for fetch API.
    * @param {object} data.Storage Optional storage object.
    * @param {boolean} data.AdvancedSecurityDataCollectionFlag Optional:
    *        boolean flag indicating if the data collection is enabled
@@ -33,7 +35,7 @@ export default class CognitoUserPool {
    *        flag is set to true.
    */
   constructor(data) {
-    const { UserPoolId, ClientId, endpoint, AdvancedSecurityDataCollectionFlag } = data || {};
+    const { UserPoolId, ClientId, endpoint, fetchOptions, AdvancedSecurityDataCollectionFlag } = data || {};
     if (!UserPoolId || !ClientId) {
       throw new Error('Both UserPoolId and ClientId are required.');
     }
@@ -45,7 +47,7 @@ export default class CognitoUserPool {
     this.userPoolId = UserPoolId;
     this.clientId = ClientId;
 
-    this.client = new Client(region, endpoint);
+    this.client = new Client(region, endpoint, fetchOptions);
 
     /**
      * By default, AdvancedSecurityDataCollectionFlag is set to true,

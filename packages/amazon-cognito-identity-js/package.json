@@ -1,5 +1,5 @@
 {
-  "name": "amazon-cognito-identity-js",
+  "name": "@everdune/amazon-cognito-identity-js",
   "description": "Amazon Cognito Identity Provider JavaScript SDK",
   "version": "3.0.11",
   "author": {

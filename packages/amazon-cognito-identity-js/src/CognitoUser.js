@@ -95,7 +95,7 @@ export default class CognitoUser {
     this.authenticationFlowType = 'USER_SRP_AUTH';
 
     this.storage = data.Storage || new StorageHelper().getStorage();
-    
+
     this.keyPrefix = `CognitoIdentityServiceProvider.${this.pool.getClientId()}`;
     this.userDataKey = `${this.keyPrefix}.${this.username}.userData`;
   }
@@ -335,7 +335,7 @@ export default class CognitoUser {
               if (errAuthenticate) {
                 return callback.onFailure(errAuthenticate);
               }
-              
+
               return this.authenticateUserInternal(
                 dataAuthenticate,
                 authenticationHelper,
@@ -1166,7 +1166,7 @@ export default class CognitoUser {
     const refreshTokenKey = `${keyPrefix}.refreshToken`;
     const clockDriftKey = `${keyPrefix}.clockDrift`;
 
-    if (this.storage.getItem(idTokenKey)) {
+    if (this.storage.getItem(refreshTokenKey)) {
       const idToken = new CognitoIdToken({
         IdToken: this.storage.getItem(idTokenKey),
       });

@@ -1,11 +1,15 @@
 {
   "name": "@everdune/amazon-cognito-identity-js",
   "description": "Amazon Cognito Identity Provider JavaScript SDK",
-  "version": "3.0.13",
+  "version": "3.0.16",
   "author": {
     "name": "Amazon Web Services",
     "email": "aws@amazon.com",
     "url": "http://aws.amazon.com"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
   },
   "homepage": "http://aws.amazon.com/cognito",
   "contributors": [

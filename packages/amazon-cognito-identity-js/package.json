@@ -8,8 +8,7 @@
     "url": "http://aws.amazon.com"
   },
   "publishConfig": {
-    "access": "restricted",
-    "registry": "https://npm.pkg.github.com"
+    "access": "restricted"
   },
   "homepage": "http://aws.amazon.com/cognito",
   "contributors": [

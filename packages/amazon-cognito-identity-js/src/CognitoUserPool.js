@@ -47,7 +47,7 @@ export default class CognitoUserPool {
     this.userPoolId = UserPoolId;
     this.clientId = ClientId;
 
-    this.client = new Client(region, endpoint, fetchOptions);
+    this.client = new Client(region, endpoint, fetchOptions || {});
 
     /**
      * By default, AdvancedSecurityDataCollectionFlag is set to true,
